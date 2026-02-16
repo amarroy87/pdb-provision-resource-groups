@@ -15,7 +15,7 @@ stages:
           - task: AzurePowerShell@5
             displayName: "Create Azure Resource Group"
             inputs:
-              azureSubscription: 'serviceConnectionProjectDayBreak'
+              azureSubscription: 'terraform-aks-azurerm-svc-con'
               ScriptType: 'FilePath'
               ScriptPath: '$(System.DefaultWorkingDirectory)/scripts/create-resource-group.ps1'
               ScriptArguments: >
@@ -25,6 +25,6 @@ stages:
                 -costCenter "112245"
                 -application "Project Day Break"
                 -description "The latest AI to do AI things"
-                -repo "https://github.com/amarroy87/pdb-provision-resource-groups"
+                -repo "https://github.com/amarroy87/pdb-provision-resource-groups/tree/feature/biceps-pdb/pipelines"
               FailOnStandardError: true
               azurePowerShellVersion: 'LatestVersion'
